@@ -6,8 +6,8 @@ steps:
 
   # Launch the test in the container
   - name: 'gcr.io/$PROJECT_ID/demo-app:$COMMIT_SHA'
-    args: ["python3", "-m", "unittest", "discover", "-s", "tests"]
-    dir: './tests'
+    args: ["python3", "-m", "unittest", "tests"]
+    dir: '.'
 
   # Push the image to Container Registry
 #  - name: 'gcr.io/cloud-builders/docker'

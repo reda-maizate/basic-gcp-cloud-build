@@ -8,5 +8,3 @@ RUN pip3 install --upgrade pip && \
 FROM base AS test
 
 COPY tests /tests
-
-CMD ["python3", "-m", "unittest", "discover", "-s", "tests"]

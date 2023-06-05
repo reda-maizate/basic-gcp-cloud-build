@@ -17,3 +17,7 @@ class TestAdd(unittest.TestCase):
         a = "Hello "
         b = "World"
         self.assertRaises(TypeError, add, a, b)
+
+
+if __name__ == '__main__':
+    unittest.main()
