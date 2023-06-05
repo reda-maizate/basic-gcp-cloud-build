@@ -1,0 +1,11 @@
+steps:
+  # Build local dockerfile image
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [ 'build', '-t', 'gcr.io/$PROJECT_ID/$APPLICATION_ID', '.' ]
+    dir: '.'
+
+  # Push the image to Container Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [ 'push', 'gcr.io/$PROJECT_ID/$APPLICATION_ID' ]
+
+timeout: '1800s' # Set a timeout for the build process
