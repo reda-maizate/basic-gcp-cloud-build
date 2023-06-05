@@ -9,6 +9,4 @@ FROM base AS test
 
 COPY tests /tests
 
-RUN pip3 install unittest
-
 CMD ["python3", "-m", "unittest", "discover", "-s", "tests"]
