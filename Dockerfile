@@ -1,6 +1,14 @@
-FROM python:3.7
+FROM python:3.7 AS base
+
+COPY src /src
 
 RUN pip3 install --upgrade pip && \
     pip3 install tensorflow
 
-ENTRYPOINT ["tail", "-f", "/dev/null"]
+FROM base AS test
+
+COPY tests /tests
+
+RUN pip3 install unittest
+
+CMD ["python3", "-m", "unittest", "discover", "-s", "tests"]
